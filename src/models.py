@@ -32,7 +32,6 @@ class Media(db.Model):
     __tablename__="media"
     id: Mapped[int] = mapped_column(primary_key=True)
     type: Mapped[MediaType] = mapped_column(Enum(MediaType), nullable=False)
-    # type: Mapped[str] = mapped_column( nullable=False)
     url: Mapped[str] = mapped_column(nullable=False)
     post_id:Mapped[int] = mapped_column(ForeignKey("post.id"))
     is_active: Mapped[bool] = mapped_column(Boolean(), nullable=False)
